@@ -27,6 +27,8 @@ class resolver
         bool leerEstado (int pos, EstadoRuta&);
         bool guardarIntransitables (Intransitable);
         void mostrarContadorTipoRutas(int *, int, char(*)[30]);
+        int tamanioArchivo(char*, int);
+        bool copiarRutas(RutaB*);
 };
 
 #endif // RESOLVER_H

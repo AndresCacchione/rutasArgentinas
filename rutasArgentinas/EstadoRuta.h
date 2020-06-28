@@ -22,6 +22,7 @@ class EstadoRuta
         EstadoRuta();
         Fecha getFechaEstadoRuta();
         short int getEstadoRuta();
+        char* getCodigoRuta();
 
     private:
         char codigoRuta[5];

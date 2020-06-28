@@ -128,17 +128,17 @@
 
 1593295798 c:\users\andres\documents\github\rutasargentinas\rutasargentinas\ciudad.h
 
-1593369161 source:c:\users\andres\documents\github\rutasargentinas\rutasargentinas\estadoruta.cpp
+1593383803 source:c:\users\andres\documents\github\rutasargentinas\rutasargentinas\estadoruta.cpp
 	"EstadoRuta.h"
 	<cstring>
 
-1593369161 c:\users\andres\documents\github\rutasargentinas\rutasargentinas\estadoruta.h
+1593383803 c:\users\andres\documents\github\rutasargentinas\rutasargentinas\estadoruta.h
 
 1593375559 source:c:\users\andres\documents\github\rutasargentinas\rutasargentinas\main.cpp
 	<iostream>
 	"resolver.h"
 
-1593375460 c:\users\andres\documents\github\rutasargentinas\rutasargentinas\resolver.h
+1593382648 c:\users\andres\documents\github\rutasargentinas\rutasargentinas\resolver.h
 	<iostream>
 	<cstdio>
 	<cstdlib>
@@ -149,7 +149,7 @@
 	"Ciudad.h"
 	"Provincia.h"
 
-1593374523 c:\users\andres\documents\github\rutasargentinas\rutasargentinas\ruta.h
+1593382206 c:\users\andres\documents\github\rutasargentinas\rutasargentinas\ruta.h
 
 1593369158 c:\users\andres\documents\github\rutasargentinas\rutasargentinas\include\intransitable.h
 
@@ -158,9 +158,10 @@
 1593296538 source:c:\users\andres\documents\github\rutasargentinas\rutasargentinas\provincia.cpp
 	"Provincia.h"
 
-1593374523 source:c:\users\andres\documents\github\rutasargentinas\rutasargentinas\ruta.cpp
+1593382229 source:c:\users\andres\documents\github\rutasargentinas\rutasargentinas\ruta.cpp
 	"Ruta.h"
+	"cstring"
 
-1593375484 source:c:\users\andres\documents\github\rutasargentinas\rutasargentinas\resolver.cpp
+1593386070 source:c:\users\andres\documents\github\rutasargentinas\rutasargentinas\resolver.cpp
 	"resolver.h"
 

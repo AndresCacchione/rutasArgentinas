@@ -1,4 +1,5 @@
 #include "Ruta.h"
+#include "cstring"
 
 Ruta::Ruta()
 {
@@ -28,4 +29,29 @@ char* Ruta::getCiudadOrigen()
 char* Ruta::getCiudadDestino()
 {
     return ciudadFin;
+}
+
+RutaB::RutaB()
+{
+    contador=0;
+}
+
+char* RutaB::getCodigoRuta()
+{
+    return codigoRuta;
+}
+
+int RutaB::getContador()
+{
+    return contador;
+}
+
+void RutaB::setCodigoRuta(char* _codigoRuta)
+{
+    strcpy(this->codigoRuta,_codigoRuta);
+}
+
+void RutaB::aumentarContador()
+{
+    this->contador++;
 }

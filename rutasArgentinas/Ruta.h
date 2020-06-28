@@ -10,7 +10,6 @@ enum tipoRuta
     Tierra
 };
 
-
 class Ruta
 {
 
@@ -31,5 +30,20 @@ class Ruta
         int tipoRuta;
         bool peaje;
 };
+
+class RutaB
+{
+public:
+    RutaB();
+    char* getCodigoRuta();
+    int getContador();
+    void setCodigoRuta(char*);
+    void aumentarContador();
+
+private:
+    char codigoRuta[5];
+    int contador;
+};
+
 
 #endif // RUTA_H

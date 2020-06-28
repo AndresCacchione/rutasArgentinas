@@ -49,40 +49,112 @@ void resolver::puntoA()
 
 //b)  Generar un archivo con el código de rutay la cantidad de días en que estuvo  intransitable esa ruta en el año 2015.
 //No deben aparecer las rutas que  estuvieron transitables durante todo el año.
+//Punto b) con memoria dinámica
 void resolver::puntoB()
 {
-    Ruta ruta;
-    Intransitable intra;
-    EstadoRuta estado;
-
-    int posRuta=0;
-
-    while (this->leerRuta(posRuta++,ruta))
+    int tam= this->tamanioArchivo("rutas.dat", sizeof(Ruta));
+    RutaB *aux = new RutaB[tam]();
+    if(copiarRutas(aux)==false)
     {
-        int posEstado=0;
-        int contDiasPorRuta=0;
-        while (this->leerEstado(posEstado++,estado))
-        {
+        cout<<"Error de lectura de rutas.dat"<<endl;
+        return;
+    }
 
-            if (estado.getFechaEstadoRuta().getAnio()==2015 && estado.getEstadoRuta()==2)
+    EstadoRuta estado;
+    int posEstado=0;
+    while (this->leerEstado(posEstado++,estado))
+    {
+        if(estado.getFechaEstadoRuta().getAnio()==2015 && estado.getEstadoRuta()==2)
+        {
+        for(int i=0;i<tam;i++)
+        {
+            if(strcmp(aux[i].getCodigoRuta(),estado.getCodigoRuta())==0)
             {
-                contDiasPorRuta++;
+                aux[i].aumentarContador();
+                break;
             }
         }
+        }
+    }
 
-        if (contDiasPorRuta>0)
+    Intransitable intra;
+    for(int i=0; i<tam; i++)
+    {
+        if(aux[i].getContador()>0)
         {
-            intra.setCantidadDias(contDiasPorRuta);
-            intra.setCodigoRuta(ruta.getCodigoRuta());
+            intra.setCantidadDias(aux[i].getContador());
+            intra.setCodigoRuta(aux[i].getCodigoRuta());
             if (guardarIntransitables(intra)==false)
             {
                 cout<<"No se pudo guardar en el archivo Intransitables"<<endl;
                 return;
             }
         }
-
     }
+    delete aux;
 }
+
+bool resolver::copiarRutas(RutaB* aux)
+{
+    FILE *p;
+    p=fopen("rutas.dat", "rb");
+    if(p==NULL) return false;
+    Ruta rut;
+    int pos=0;
+    while(leerRuta(pos++,rut))
+    {
+        aux[pos].setCodigoRuta(rut.getCodigoRuta());
+    }
+return true;
+}
+
+int resolver::tamanioArchivo(char* archivo, int tamanio)
+{
+    FILE *p;
+    p=fopen(archivo, "rb");
+    if(p==NULL) return -1;
+    fseek(p,0,SEEK_END);
+    int retornar= ftell(p)/tamanio;
+    fclose(p);
+return retornar;
+}
+
+//b)  Generar un archivo con el código de rutay la cantidad de días en que estuvo  intransitable esa ruta en el año 2015.
+//No deben aparecer las rutas que  estuvieron transitables durante todo el año.
+//void resolver::puntoB()
+//{
+//    Ruta ruta;
+//    Intransitable intra;
+//    EstadoRuta estado;
+//
+//    int posRuta=0;
+//
+//    while (this->leerRuta(posRuta++,ruta))
+//    {
+//        int posEstado=0;
+//        int contDiasPorRuta=0;
+//        while (this->leerEstado(posEstado++,estado))
+//        {
+//
+//            if (estado.getFechaEstadoRuta().getAnio()==2015 && estado.getEstadoRuta()==2)
+//            {
+//                contDiasPorRuta++;
+//            }
+//        }
+//
+//        if (contDiasPorRuta>0)
+//        {
+//            intra.setCantidadDias(contDiasPorRuta);
+//            intra.setCodigoRuta(ruta.getCodigoRuta());
+//            if (guardarIntransitables(intra)==false)
+//            {
+//                cout<<"No se pudo guardar en el archivo Intransitables"<<endl;
+//                return;
+//            }
+//        }
+//
+//    }
+//}
 
 //c)  La cantidad de rutas de cada tipo.
 void resolver::puntoC()
@@ -118,7 +190,6 @@ bool resolver::guardarIntransitables(Intransitable intra)
     fclose(p);
 
     return guardo;
-
 }
 
 void resolver::mostrarContadorTipoRutas(int *vec, int tam, char (*nombres)[30])

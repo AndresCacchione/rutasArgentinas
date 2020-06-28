@@ -5,12 +5,15 @@ EstadoRuta::EstadoRuta()
 {
 }
 
+char* EstadoRuta::getCodigoRuta()
+{
+    return codigoRuta;
+}
+
 int Fecha::getAnio()
 {
     return anio;
 }
-
-
 
 Fecha EstadoRuta::getFechaEstadoRuta()
 {
