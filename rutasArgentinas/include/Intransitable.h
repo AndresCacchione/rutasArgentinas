@@ -1,0 +1,6 @@
+#ifndef INTRANSITABLE_H
+#define INTRANSITABLE_H
+
+
+
+#endif // INTRANSITABLE_H

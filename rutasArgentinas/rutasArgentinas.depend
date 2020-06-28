@@ -1,0 +1,125 @@
+# depslib dependency file v1.0
+1593295796 source:c:\users\andres\desktop\rutasargentinas\ciudad.cpp
+	"Ciudad.h"
+
+1593295796 c:\users\andres\desktop\rutasargentinas\ciudad.h
+
+1593290668 source:c:\users\andres\desktop\rutasargentinas\estadoruta.cpp
+	"EstadoRuta.h"
+
+1593290668 c:\users\andres\desktop\rutasargentinas\estadoruta.h
+
+1593291488 source:c:\users\andres\desktop\rutasargentinas\main.cpp
+	<iostream>
+	"resolver.h"
+
+1593296537 source:c:\users\andres\desktop\rutasargentinas\provincia.cpp
+	"Provincia.h"
+
+1593296522 c:\users\andres\desktop\rutasargentinas\provincia.h
+
+1593295796 source:c:\users\andres\desktop\rutasargentinas\ruta.cpp
+	"Ruta.h"
+
+1593295796 c:\users\andres\desktop\rutasargentinas\ruta.h
+
+1593296522 source:c:\users\andres\desktop\rutasargentinas\resolver.cpp
+	"resolver.h"
+
+1593296612 c:\users\andres\desktop\rutasargentinas\resolver.h
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	"Ruta.h"
+	"EstadoRuta.h"
+	"Ciudad.h"
+	"Provincia.h"
+
+1593295796 source:c:\users\ailen\onedrive\desktop\rutasargentinas\ciudad.cpp
+	"Ciudad.h"
+
+1593295796 c:\users\ailen\onedrive\desktop\rutasargentinas\ciudad.h
+
+1593291488 source:c:\users\ailen\onedrive\desktop\rutasargentinas\main.cpp
+	<iostream>
+	"resolver.h"
+
+1593301167 c:\users\ailen\onedrive\desktop\rutasargentinas\resolver.h
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	"Ruta.h"
+	"EstadoRuta.h"
+	"Intransitable.h"
+	"Ciudad.h"
+	"Provincia.h"
+
+1593295796 c:\users\ailen\onedrive\desktop\rutasargentinas\ruta.h
+
+1593301193 c:\users\ailen\onedrive\desktop\rutasargentinas\estadoruta.h
+
+1593296522 c:\users\ailen\onedrive\desktop\rutasargentinas\provincia.h
+
+1593296537 source:c:\users\ailen\onedrive\desktop\rutasargentinas\provincia.cpp
+	"Provincia.h"
+
+1593295796 source:c:\users\ailen\onedrive\desktop\rutasargentinas\ruta.cpp
+	"Ruta.h"
+
+1593301095 source:c:\users\ailen\onedrive\desktop\rutasargentinas\estadoruta.cpp
+	"EstadoRuta.h"
+	<cstring>
+
+1593301095 c:\users\ailen\onedrive\desktop\rutasargentinas\include\intransitable.h
+
+1593301116 source:c:\users\ailen\onedrive\desktop\rutasargentinas\src\intransitable.cpp
+	"Intransitable.h"
+	<cstring>
+
+1593295798 source:c:\users\andres\desktop\rutasargentinas\rutasargentinas\ciudad.cpp
+	"Ciudad.h"
+
+1593295798 c:\users\andres\desktop\rutasargentinas\rutasargentinas\ciudad.h
+
+1593369161 source:c:\users\andres\desktop\rutasargentinas\rutasargentinas\estadoruta.cpp
+	"EstadoRuta.h"
+	<cstring>
+
+1593369161 c:\users\andres\desktop\rutasargentinas\rutasargentinas\estadoruta.h
+
+1593291490 source:c:\users\andres\desktop\rutasargentinas\rutasargentinas\main.cpp
+	<iostream>
+	"resolver.h"
+
+1593301168 c:\users\andres\desktop\rutasargentinas\rutasargentinas\resolver.h
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	"Ruta.h"
+	"EstadoRuta.h"
+	"Intransitable.h"
+	"Ciudad.h"
+	"Provincia.h"
+
+1593295798 c:\users\andres\desktop\rutasargentinas\rutasargentinas\ruta.h
+
+1593369158 c:\users\andres\desktop\rutasargentinas\rutasargentinas\include\intransitable.h
+
+1593296524 c:\users\andres\desktop\rutasargentinas\rutasargentinas\provincia.h
+
+1593296538 source:c:\users\andres\desktop\rutasargentinas\rutasargentinas\provincia.cpp
+	"Provincia.h"
+
+1593369161 source:c:\users\andres\desktop\rutasargentinas\rutasargentinas\resolver.cpp
+	"resolver.h"
+
+1593295798 source:c:\users\andres\desktop\rutasargentinas\rutasargentinas\ruta.cpp
+	"Ruta.h"
+
+1593301118 source:c:\users\andres\desktop\rutasargentinas\rutasargentinas\src\intransitable.cpp
+	"Intransitable.h"
+	<cstring>
+
