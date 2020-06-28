@@ -5,6 +5,11 @@ Ruta::Ruta()
 
 }
 
+int Ruta::getTipoRuta()
+{
+    return tipoRuta;
+}
+
 float Ruta::getKM()
 {
     return km;

@@ -21,6 +21,7 @@ class Ruta
         char* getCodigoRuta();
         char* getCiudadOrigen();
         char* getCiudadDestino();
+        int getTipoRuta();
 
     private:
         char codigoRuta[5];

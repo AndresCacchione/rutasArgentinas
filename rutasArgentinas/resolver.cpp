@@ -6,41 +6,49 @@ resolver::resolver()
     //ctor
 }
 
-
+//a)  La ruta más larga, indicando los nombres de la ciudad y la provincia de origen y de fin.
 void resolver::puntoA()
 {
     Ruta rut;
     Ciudad ciu;
     Provincia prov;
     int pos=this->buscarPosicionRutaMax();
-    if(leerRuta(pos,rut)==false) return;
+    if(leerRuta(pos,rut)==false)
+        return;
     cout<<"La ruta mas larga es la "<< rut.getCodigoRuta()<<endl;
 
     int posOrigen = this->buscarCiudad(rut.getCiudadOrigen());
     int posDestino =this->buscarCiudad(rut.getCiudadDestino());
-    if(leerCiudad(posOrigen,ciu)==false) return;
+    if(leerCiudad(posOrigen,ciu)==false)
+        return;
     cout<<"La ciudad origen es:"<<ciu.getCiudad();
 
     int codigoProvinciaOrigen= ciu.getCodigoProvincia();
 
-    if(leerCiudad(posDestino,ciu)==false) return;
+    if(leerCiudad(posDestino,ciu)==false)
+        return;
     cout<<"La ciudad destino es:"<<ciu.getCiudad();
 
     int codigoProvinciaDestino= ciu.getCodigoProvincia();
 
 
     int posProvOrigen = this->buscarPosicionProvincia(codigoProvinciaOrigen);
-    if(posProvOrigen==-1) return;
-    if(this->leerProvincia(posProvOrigen,prov)==false) return;
+    if(posProvOrigen==-1)
+        return;
+    if(this->leerProvincia(posProvOrigen,prov)==false)
+        return;
     cout<<"La provincia de origen es: "<< prov.getNombreProvincia() << endl;
 
     int posProvDestino = this->buscarPosicionProvincia(codigoProvinciaDestino);
-    if(posProvDestino==-1) return;
-    if(this->leerProvincia(posProvDestino,prov)==false) return;
+    if(posProvDestino==-1)
+        return;
+    if(this->leerProvincia(posProvDestino,prov)==false)
+        return;
     cout<<"La provincia de destino es: "<< prov.getNombreProvincia() << endl;
 }
 
-
+//b)  Generar un archivo con el código de rutay la cantidad de días en que estuvo  intransitable esa ruta en el año 2015.
+//No deben aparecer las rutas que  estuvieron transitables durante todo el año.
 void resolver::puntoB()
 {
     Ruta ruta;
@@ -76,6 +84,27 @@ void resolver::puntoB()
     }
 }
 
+//c)  La cantidad de rutas de cada tipo.
+void resolver::puntoC()
+{
+    const int cantidadTipoRutas=5;
+    char nombreRutas[cantidadTipoRutas][30]= {"Autopista",
+                                 "Asfalto",
+                                 "Ripio",
+                                 "Mejorado",
+                                 "Tierra"
+                                };
+    int contadorTipoRutas[cantidadTipoRutas]= {0};
+    int posRuta=0;
+    Ruta rut;
+    while(leerRuta(posRuta++,rut))
+    {
+        contadorTipoRutas[rut.getTipoRuta()-1]++;
+    }
+
+    mostrarContadorTipoRutas(contadorTipoRutas, cantidadTipoRutas, nombreRutas);
+}
+
 bool resolver::guardarIntransitables(Intransitable intra)
 {
     FILE *p;
@@ -88,14 +117,14 @@ bool resolver::guardarIntransitables(Intransitable intra)
     bool guardo= fwrite(&intra, sizeof (Intransitable),1,p);
     fclose(p);
 
-return guardo;
+    return guardo;
 
 }
 
-void resolver::puntoC()
+void resolver::mostrarContadorTipoRutas(int *vec, int tam, char (*nombres)[30])
 {
-
-
+    for(int i=0; i<tam; i++)
+        cout<<"La cantidad de rutas del tipo "<< nombres[i]<< " es " << vec[i]<<endl;
 }
 
 bool resolver::leerEstado(int pos, EstadoRuta& estado)
@@ -120,10 +149,11 @@ int resolver::buscarPosicionProvincia(int codigoProvincia)
     int pos=0;
     while(leerProvincia(pos++,prov))
     {
-        if(prov.getCodigoProvincia()==codigoProvincia) return --pos;
+        if(prov.getCodigoProvincia()==codigoProvincia)
+            return --pos;
     }
 
-return -1;
+    return -1;
 }
 
 bool resolver::leerCiudad(int pos, Ciudad &ciu)
@@ -169,7 +199,7 @@ int resolver::buscarCiudad(char *ciudad)
             return --pos;
         }
     }
-return -1;
+    return -1;
 }
 
 
@@ -203,5 +233,5 @@ int resolver::buscarPosicionRutaMax()
             posmax=pos;
         }
     }
-return posmax;
+    return posmax;
 }
